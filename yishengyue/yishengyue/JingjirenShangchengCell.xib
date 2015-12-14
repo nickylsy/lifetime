@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="jingjirenshangchengcell" id="bTX-HD-u7W" customClass="JingjirenShangchengCell">
+            <rect key="frame" x="0.0" y="0.0" width="130" height="124"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="130" height="124"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="qbR-Yk-OiJ">
+                        <rect key="frame" x="5" y="5" width="120" height="60"/>
+                        <constraints>
+                            <constraint firstAttribute="width" secondItem="qbR-Yk-OiJ" secondAttribute="height" multiplier="2:1" id="OfV-8Y-si0"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oeP-8d-FBJ">
+                        <rect key="frame" x="5" y="76" width="120" height="20"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="20" id="cJb-vy-PbH"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xXm-ag-lpk">
+                        <rect key="frame" x="5" y="98" width="85" height="21"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="21" id="h0Y-K5-Apq"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                        <color key="textColor" red="0.98419510690000001" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ltG-yi-SPt">
+                        <rect key="frame" x="102" y="100" width="18" height="18"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="18" id="7sU-Zz-btN"/>
+                            <constraint firstAttribute="width" constant="18" id="MBL-Nh-7q5"/>
+                        </constraints>
+                        <state key="normal" image="shangcheng_fenxiang.png">
+                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                        </state>
+                    </button>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Vic-LE-f3z">
+                        <rect key="frame" x="0.0" y="73" width="130" height="1"/>
+                        <color key="backgroundColor" red="0.91372549020000005" green="0.91372549020000005" blue="0.91372549020000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="1" id="6D7-wY-Iw1"/>
+                        </constraints>
+                    </imageView>
+                </subviews>
+                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            </view>
+            <constraints>
+                <constraint firstItem="qbR-Yk-OiJ" firstAttribute="leading" secondItem="bTX-HD-u7W" secondAttribute="leading" constant="5" id="3Xj-pz-1wI"/>
+                <constraint firstItem="oeP-8d-FBJ" firstAttribute="top" secondItem="Vic-LE-f3z" secondAttribute="bottom" constant="2" id="IRs-6W-xGe"/>
+                <constraint firstItem="xXm-ag-lpk" firstAttribute="leading" secondItem="bTX-HD-u7W" secondAttribute="leading" constant="5" id="N6C-Hd-dW6"/>
+                <constraint firstItem="Vic-LE-f3z" firstAttribute="leading" secondItem="bTX-HD-u7W" secondAttribute="leading" id="N6M-C5-IZj"/>
+                <constraint firstAttribute="trailing" secondItem="oeP-8d-FBJ" secondAttribute="trailing" constant="5" id="StP-s8-JBb"/>
+                <constraint firstItem="Vic-LE-f3z" firstAttribute="top" secondItem="qbR-Yk-OiJ" secondAttribute="bottom" constant="8" id="VhH-hC-1Yc"/>
+                <constraint firstItem="xXm-ag-lpk" firstAttribute="centerY" secondItem="ltG-yi-SPt" secondAttribute="centerY" id="ZLw-tn-N4f"/>
+                <constraint firstAttribute="trailing" secondItem="Vic-LE-f3z" secondAttribute="trailing" id="eeJ-Zo-Lq4"/>
+                <constraint firstItem="ltG-yi-SPt" firstAttribute="top" secondItem="oeP-8d-FBJ" secondAttribute="bottom" constant="4" id="fbX-fR-w69"/>
+                <constraint firstItem="oeP-8d-FBJ" firstAttribute="leading" secondItem="bTX-HD-u7W" secondAttribute="leading" constant="5" id="iD1-fh-e5z"/>
+                <constraint firstItem="qbR-Yk-OiJ" firstAttribute="top" secondItem="bTX-HD-u7W" secondAttribute="top" constant="5" id="ivo-mh-tm0"/>
+                <constraint firstAttribute="trailing" secondItem="qbR-Yk-OiJ" secondAttribute="trailing" constant="5" id="jZf-FF-0e2"/>
+                <constraint firstItem="ltG-yi-SPt" firstAttribute="leading" secondItem="xXm-ag-lpk" secondAttribute="trailing" constant="12" id="trY-ZG-l2k"/>
+                <constraint firstAttribute="trailing" secondItem="ltG-yi-SPt" secondAttribute="trailing" constant="10" id="vsY-Ya-rgF"/>
+            </constraints>
+            <size key="customSize" width="130" height="119"/>
+            <connections>
+                <outlet property="imageView" destination="qbR-Yk-OiJ" id="KwP-cP-jkv"/>
+                <outlet property="nameLab" destination="oeP-8d-FBJ" id="KEP-m5-Cdj"/>
+                <outlet property="priceLab" destination="xXm-ag-lpk" id="5U1-mt-ZGS"/>
+                <outlet property="shareBtn" destination="ltG-yi-SPt" id="maS-ty-Ovq"/>
+            </connections>
+            <point key="canvasLocation" x="293" y="273"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="shangcheng_fenxiang.png" width="38" height="36"/>
+    </resources>
+</document>

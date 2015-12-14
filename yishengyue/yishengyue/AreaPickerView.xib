@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="14D131" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="sJ2-aN-jUf" customClass="AreaPickerView">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="244"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="21B-XE-zUG">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="44" id="B6c-oT-72U"/>
+                    </constraints>
+                    <items>
+                        <barButtonItem width="12" systemItem="fixedSpace" id="g2M-zW-3kW"/>
+                        <barButtonItem title="取消" id="wqK-eW-SYL">
+                            <connections>
+                                <action selector="cancel:" destination="sJ2-aN-jUf" id="8Ji-NK-Bd0"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem systemItem="flexibleSpace" id="4r0-Dy-hZz"/>
+                        <barButtonItem title="确定" id="bEk-Wq-zd3">
+                            <connections>
+                                <action selector="ok:" destination="sJ2-aN-jUf" id="vZb-yY-tae"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem width="12" systemItem="fixedSpace" id="34T-Jg-6JL"/>
+                    </items>
+                </toolbar>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Fyj-vr-TWP">
+                    <rect key="frame" x="0.0" y="56" width="320" height="180"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="Fyj-vr-TWP" firstAttribute="leading" secondItem="sJ2-aN-jUf" secondAttribute="leading" id="KMz-yG-NPq"/>
+                <constraint firstAttribute="trailing" secondItem="Fyj-vr-TWP" secondAttribute="trailing" id="N0D-sL-44y"/>
+                <constraint firstAttribute="trailing" secondItem="21B-XE-zUG" secondAttribute="trailing" id="Udd-7W-1zw"/>
+                <constraint firstItem="21B-XE-zUG" firstAttribute="top" secondItem="sJ2-aN-jUf" secondAttribute="top" id="Vrz-Wo-7Ad"/>
+                <constraint firstAttribute="bottom" secondItem="Fyj-vr-TWP" secondAttribute="bottom" constant="8" id="fpz-lS-wzx"/>
+                <constraint firstItem="Fyj-vr-TWP" firstAttribute="top" secondItem="21B-XE-zUG" secondAttribute="bottom" constant="12" id="gv1-Iv-EkB"/>
+                <constraint firstItem="21B-XE-zUG" firstAttribute="leading" secondItem="sJ2-aN-jUf" secondAttribute="leading" id="p5n-J4-1ex"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="hzareapicker" destination="Fyj-vr-TWP" id="DeE-Yy-dxi"/>
+                <outlet property="pickerView" destination="Fyj-vr-TWP" id="jc3-ab-Fxh"/>
+            </connections>
+            <point key="canvasLocation" x="179.5" y="365"/>
+        </view>
+    </objects>
+</document>

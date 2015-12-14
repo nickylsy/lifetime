@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="8191" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="Pw5-r0-05N" customClass="CircleListView">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="400"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="t39-fN-UIf">
+                    <rect key="frame" x="0.0" y="8" width="320" height="44"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="44" id="FoJ-ie-Juv"/>
+                    </constraints>
+                    <textInputTraits key="textInputTraits"/>
+                </searchBar>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="aFK-mD-yVJ">
+                    <rect key="frame" x="0.0" y="52" width="320" height="348"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                </tableView>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="t39-fN-UIf" firstAttribute="top" secondItem="Pw5-r0-05N" secondAttribute="top" constant="8" id="Gd7-ok-92L"/>
+                <constraint firstAttribute="bottom" secondItem="aFK-mD-yVJ" secondAttribute="bottom" id="Rep-hs-dgs"/>
+                <constraint firstItem="aFK-mD-yVJ" firstAttribute="top" secondItem="t39-fN-UIf" secondAttribute="bottom" id="bX8-m0-vhZ"/>
+                <constraint firstAttribute="trailing" secondItem="t39-fN-UIf" secondAttribute="trailing" id="cDF-bO-hM0"/>
+                <constraint firstAttribute="trailing" secondItem="aFK-mD-yVJ" secondAttribute="trailing" id="gZL-4c-SiP"/>
+                <constraint firstItem="t39-fN-UIf" firstAttribute="leading" secondItem="Pw5-r0-05N" secondAttribute="leading" id="sFB-LT-M2k"/>
+                <constraint firstItem="aFK-mD-yVJ" firstAttribute="leading" secondItem="Pw5-r0-05N" secondAttribute="leading" id="vgb-Pd-I4Y"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="searchBar" destination="t39-fN-UIf" id="QH5-M1-99s"/>
+                <outlet property="tableView" destination="aFK-mD-yVJ" id="7qV-Pq-B95"/>
+            </connections>
+            <point key="canvasLocation" x="172" y="354"/>
+        </view>
+    </objects>
+</document>

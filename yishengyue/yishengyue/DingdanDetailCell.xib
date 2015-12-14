@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="dingdandetailcell" rowHeight="91" id="QB8-yM-kIW" customClass="DingdanDetailCell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="91"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="QB8-yM-kIW" id="ksI-Vj-Kcp">
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="p2y-pu-4dl">
+                        <rect key="frame" x="10" y="10" width="70" height="70"/>
+                        <constraints>
+                            <constraint firstAttribute="width" secondItem="p2y-pu-4dl" secondAttribute="height" multiplier="1:1" id="Syc-cc-bqv"/>
+                        </constraints>
+                    </imageView>
+                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="福瑞至养大气球NGA分解决啊拉法基啊；就发生；交房；阿萨 " selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oGl-Zl-SnJ">
+                        <rect key="frame" x="88" y="0.0" width="140" height="80"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                    </textView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="￥999.99" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FY9-Sx-GWz">
+                        <rect key="frame" x="236" y="7" width="76" height="21"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="21" id="P01-US-J3I"/>
+                            <constraint firstAttribute="width" constant="76" id="p7T-yU-juj"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="x1" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SZj-rY-Dzg">
+                        <rect key="frame" x="236" y="29" width="76" height="21"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="76" id="9py-Oh-XFO"/>
+                            <constraint firstAttribute="height" constant="21" id="R5o-rL-yTs"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="64x-aV-9Ko">
+                        <rect key="frame" x="236" y="60" width="76" height="25"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="76" id="XLu-8z-vPE"/>
+                            <constraint firstAttribute="height" constant="25" id="rNc-rZ-AMa"/>
+                        </constraints>
+                        <state key="normal" title="申请退货">
+                            <color key="titleColor" red="0.14901960780000001" green="0.72549019609999998" blue="0.65490196079999996" alpha="1" colorSpace="calibratedRGB"/>
+                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                        </state>
+                    </button>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="oGl-Zl-SnJ" firstAttribute="leading" secondItem="p2y-pu-4dl" secondAttribute="trailing" constant="8" id="5Sd-by-jCS"/>
+                    <constraint firstItem="p2y-pu-4dl" firstAttribute="top" secondItem="ksI-Vj-Kcp" secondAttribute="top" constant="10" id="AAM-ym-33X"/>
+                    <constraint firstItem="SZj-rY-Dzg" firstAttribute="top" secondItem="FY9-Sx-GWz" secondAttribute="bottom" constant="1" id="CYs-R9-dha"/>
+                    <constraint firstItem="64x-aV-9Ko" firstAttribute="leading" secondItem="oGl-Zl-SnJ" secondAttribute="trailing" constant="8" id="DMo-d4-NDd"/>
+                    <constraint firstAttribute="bottom" secondItem="oGl-Zl-SnJ" secondAttribute="bottom" constant="10" id="Fiw-zD-E5R"/>
+                    <constraint firstAttribute="trailing" secondItem="FY9-Sx-GWz" secondAttribute="trailing" constant="8" id="FtZ-wK-LYc"/>
+                    <constraint firstItem="FY9-Sx-GWz" firstAttribute="top" secondItem="ksI-Vj-Kcp" secondAttribute="top" constant="7" id="Gau-84-znQ"/>
+                    <constraint firstAttribute="trailing" secondItem="64x-aV-9Ko" secondAttribute="trailing" constant="8" id="SgM-8m-O2v"/>
+                    <constraint firstItem="p2y-pu-4dl" firstAttribute="leading" secondItem="ksI-Vj-Kcp" secondAttribute="leading" constant="10" id="ajm-Gw-hsd"/>
+                    <constraint firstItem="oGl-Zl-SnJ" firstAttribute="top" secondItem="ksI-Vj-Kcp" secondAttribute="top" id="gyU-tQ-U3y"/>
+                    <constraint firstAttribute="trailing" secondItem="SZj-rY-Dzg" secondAttribute="trailing" constant="8" id="npj-bR-YNG"/>
+                    <constraint firstAttribute="bottom" secondItem="64x-aV-9Ko" secondAttribute="bottom" constant="5" id="u5z-tr-aDe"/>
+                    <constraint firstAttribute="bottom" secondItem="p2y-pu-4dl" secondAttribute="bottom" constant="10" id="xdX-xf-u4k"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="numberLab" destination="SZj-rY-Dzg" id="zT7-dq-JS3"/>
+                <outlet property="pictureImg" destination="p2y-pu-4dl" id="klS-gS-gyO"/>
+                <outlet property="priceLab" destination="FY9-Sx-GWz" id="LUm-nR-942"/>
+                <outlet property="titleTxt" destination="oGl-Zl-SnJ" id="Af8-m2-fNO"/>
+                <outlet property="tuihuoBtn" destination="64x-aV-9Ko" id="AWO-NK-S7G"/>
+            </connections>
+            <point key="canvasLocation" x="455" y="276.5"/>
+        </tableViewCell>
+    </objects>
+</document>

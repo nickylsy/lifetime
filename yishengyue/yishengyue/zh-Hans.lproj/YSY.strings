@@ -1,0 +1,162 @@
+
+/* Class = "UIButton"; normalTitle = "完成"; ObjectID = "0LB-cS-DQv"; */
+"0LB-cS-DQv.normalTitle" = "完成";
+
+/* Class = "UIButton"; normalTitle = "条件均已满足"; ObjectID = "18b-Kg-XPa"; */
+"18b-Kg-XPa.normalTitle" = "条件均已满足";
+
+/* Class = "UILabel"; text = "2.按下盒子上的\nWIFI按钮打开盒子WiFi"; ObjectID = "1Ab-W4-fhr"; */
+"1Ab-W4-fhr.text" = "2.按下盒子上的\nWIFI按钮打开盒子WiFi";
+
+/* Class = "UILabel"; text = "网络连接失败，请检查您的网络"; ObjectID = "5GI-zh-ti6"; */
+"5GI-zh-ti6.text" = "网络连接失败，请检查您的网络";
+
+/* Class = "UILabel"; text = "给我取个名字吧"; ObjectID = "5dy-gA-2SB"; */
+"5dy-gA-2SB.text" = "给我取个名字吧";
+
+/* Class = "UILabel"; text = "4.保证以上的步骤完成后请\n点击屏幕下方按钮"; ObjectID = "63g-sd-0Lv"; */
+"63g-sd-0Lv.text" = "4.保证以上的步骤完成后请\n点击屏幕下方按钮";
+
+/* Class = "UINavigationItem"; title = "配置空气盒子"; ObjectID = "85s-sa-1AK"; */
+"85s-sa-1AK.title" = "配置空气盒子";
+
+/* Class = "UILabel"; text = "个人中心"; ObjectID = "8wX-ha-PaP"; */
+"8wX-ha-PaP.text" = "个人中心";
+
+/* Class = "UILabel"; text = "分享获利"; ObjectID = "Bwg-Jc-PsN"; */
+"Bwg-Jc-PsN.text" = "分享获利";
+
+/* Class = "UINavigationItem"; title = "配置空气盒子"; ObjectID = "GSm-47-YYD"; */
+"GSm-47-YYD.title" = "配置空气盒子";
+
+/* Class = "UIButton"; normalTitle = "开始连接"; ObjectID = "Iiv-we-Jkx"; */
+"Iiv-we-Jkx.normalTitle" = "开始连接";
+
+/* Class = "UILabel"; text = "3.手机切换到盒子提供的\nWIFI（一般盒子提供的\nWIFI名为ESP_XXXXXX）"; ObjectID = "JQo-Ck-AF0"; */
+"JQo-Ck-AF0.text" = "3.手机切换到盒子提供的\nWIFI（一般盒子提供的\nWIFI名为ESP_XXXXXX）";
+
+/* Class = "UILabel"; text = "使用自定义头像"; ObjectID = "Jgc-TW-UUG"; */
+"Jgc-TW-UUG.text" = "使用自定义头像";
+
+/* Class = "UILabel"; text = "注：10个字符以内，文字、字母和数字组成"; ObjectID = "KrQ-qm-zP1"; */
+"KrQ-qm-zP1.text" = "注：10个字符以内，文字、字母和数字组成";
+
+/* Class = "UIButton"; normalTitle = "编辑资料"; ObjectID = "PCx-UN-50Z"; */
+"PCx-UN-50Z.normalTitle" = "编辑资料";
+
+/* Class = "UIBarButtonItem"; title = " "; ObjectID = "S8Y-F4-3zG"; */
+"S8Y-F4-3zG.title" = " ";
+
+/* Class = "UILabel"; text = "一键创业"; ObjectID = "Sk7-wZ-N6W"; */
+"Sk7-wZ-N6W.text" = "一键创业";
+
+/* Class = "UILabel"; text = "未来生活"; ObjectID = "TP8-yz-Wiv"; */
+"TP8-yz-Wiv.text" = "未来生活";
+
+/* Class = "UITextField"; placeholder = "请输入WiFi密码"; ObjectID = "UZ2-SR-I0Z"; */
+"UZ2-SR-I0Z.placeholder" = "请输入WiFi密码";
+
+/* Class = "UINavigationItem"; title = "配置空气盒子"; ObjectID = "UZ7-Cz-Gl5"; */
+"UZ7-Cz-Gl5.title" = "配置空气盒子";
+
+/* Class = "UIButton"; normalTitle = "继续绑定"; ObjectID = "VGe-zb-CDK"; */
+"VGe-zb-CDK.normalTitle" = "继续绑定";
+
+/* Class = "UITabBarItem"; title = "一键创业"; ObjectID = "WP6-Fe-RpT"; */
+"WP6-Fe-RpT.title" = "一键创业";
+
+/* Class = "UITextField"; placeholder = "建议为您的盒子取个独一无二的名字"; ObjectID = "Wbf-d4-L7D"; */
+"Wbf-d4-L7D.placeholder" = "建议为您的盒子取个独一无二的名字";
+
+/* Class = "UILabel"; text = "绑定成功"; ObjectID = "XCI-fw-KnM"; */
+"XCI-fw-KnM.text" = "绑定成功";
+
+/* Class = "UILabel"; text = "360°看房"; ObjectID = "XGO-VK-v15"; */
+"XGO-VK-v15.text" = "360°看房";
+
+/* Class = "UILabel"; text = "1.确保盒子\n已经连接电源"; ObjectID = "ZmR-Kw-8ZU"; */
+"ZmR-Kw-8ZU.text" = "1.确保盒子\n已经连接电源";
+
+/* Class = "UITabBarItem"; title = "智慧家"; ObjectID = "bdi-M3-DoI"; */
+"bdi-M3-DoI.title" = "智慧家";
+
+/* Class = "UIBarButtonItem"; title = " "; ObjectID = "c5z-Zv-Bc5"; */
+"c5z-Zv-Bc5.title" = " ";
+
+/* Class = "UILabel"; text = "全民经纪人"; ObjectID = "cMH-EJ-ak3"; */
+"cMH-EJ-ak3.text" = "全民经纪人";
+
+/* Class = "UILabel"; text = "配置前，请您确保以下几项:"; ObjectID = "cx0-am-fgV"; */
+"cx0-am-fgV.text" = "配置前，请您确保以下几项:";
+
+/* Class = "UILabel"; text = "连接中......有点小激动"; ObjectID = "ddj-PN-b2o"; */
+"ddj-PN-b2o.text" = "连接中......有点小激动";
+
+/* Class = "UINavigationItem"; title = "绑定空气盒子"; ObjectID = "eOD-g7-n0b"; */
+"eOD-g7-n0b.title" = "绑定空气盒子";
+
+/* Class = "UIButton"; normalTitle = "电话预约：028-85967856"; ObjectID = "eyu-Xl-ZJo"; */
+"eyu-Xl-ZJo.normalTitle" = "电话预约：028-85967856";
+
+/* Class = "UIBarButtonItem"; title = "资料编辑"; ObjectID = "fuJ-bs-9oe"; */
+"fuJ-bs-9oe.title" = "资料编辑";
+
+/* Class = "UIButton"; normalTitle = "绑定完成"; ObjectID = "fw9-g4-bKb"; */
+"fw9-g4-bKb.normalTitle" = "绑定完成";
+
+/* Class = "UITabBarItem"; title = "生态商城"; ObjectID = "iUG-Af-1zW"; */
+"iUG-Af-1zW.title" = "生态商城";
+
+/* Class = "UILabel"; text = "精品户型"; ObjectID = "ia3-gD-9XT"; */
+"ia3-gD-9XT.text" = "精品户型";
+
+/* Class = "UIBarButtonItem"; title = " "; ObjectID = "jkx-cw-sml"; */
+"jkx-cw-sml.title" = " ";
+
+/* Class = "UILabel"; text = "全景景观"; ObjectID = "kYW-5a-J1s"; */
+"kYW-5a-J1s.text" = "全景景观";
+
+/* Class = "UITextField"; placeholder = "请输入SSID"; ObjectID = "kko-mi-d2h"; */
+"kko-mi-d2h.placeholder" = "请输入SSID";
+
+/* Class = "UIButton"; normalTitle = "完成"; ObjectID = "lLv-fi-R1B"; */
+"lLv-fi-R1B.normalTitle" = "完成";
+
+/* Class = "UIBarButtonItem"; title = " "; ObjectID = "lRc-XS-jMl"; */
+"lRc-XS-jMl.title" = " ";
+
+/* Class = "UINavigationItem"; title = "配置空气盒子"; ObjectID = "nbz-Tu-NtM"; */
+"nbz-Tu-NtM.title" = "配置空气盒子";
+
+/* Class = "UITabBarItem"; title = "个人中心"; ObjectID = "o04-Qw-acv"; */
+"o04-Qw-acv.title" = "个人中心";
+
+/* Class = "UINavigationItem"; title = "配置空气盒子"; ObjectID = "o7a-Mn-55m"; */
+"o7a-Mn-55m.title" = "配置空气盒子";
+
+/* Class = "UILabel"; text = "楼盘地图"; ObjectID = "puM-TL-Tgw"; */
+"puM-TL-Tgw.text" = "楼盘地图";
+
+/* Class = "UINavigationItem"; title = "绑定空气盒子"; ObjectID = "rhR-i4-8k8"; */
+"rhR-i4-8k8.title" = "绑定空气盒子";
+
+/* Class = "UILabel"; text = "消息中心"; ObjectID = "rxW-f3-yGJ"; */
+"rxW-f3-yGJ.text" = "消息中心";
+
+/* Class = "UILabel"; text = "品牌介绍"; ObjectID = "s8Z-cC-yK3"; */
+"s8Z-cC-yK3.text" = "品牌介绍";
+
+/* Class = "UIBarButtonItem"; title = "完成"; ObjectID = "tGL-3f-4XF"; */
+"tGL-3f-4XF.title" = "完成";
+
+/* Class = "UILabel"; text = "绑定失败"; ObjectID = "ubH-TR-LPX"; */
+"ubH-TR-LPX.text" = "绑定失败";
+
+/* Class = "UINavigationItem"; title = "配置空气盒子"; ObjectID = "vsD-1I-pRR"; */
+"vsD-1I-pRR.title" = "配置空气盒子";
+
+/* Class = "UINavigationItem"; title = "配置空气盒子"; ObjectID = "xTt-F5-gj3"; */
+"xTt-F5-gj3.title" = "配置空气盒子";
+
+/* Class = "UITabBarItem"; title = "邻里圈子"; ObjectID = "y46-jZ-boG"; */
+"y46-jZ-boG.title" = "邻里圈子";
