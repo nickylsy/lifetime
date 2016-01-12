@@ -58,6 +58,7 @@
     HomeAirvalueView *_airvalueview;
     HomeFuncView *_funcView;
     NSTimer *_timer;
+    NSTimer * _changeTimer;
     JMHoledView *_holedview;
     UIWindow *_warningWindow;
     UIView * playerview;
@@ -81,9 +82,10 @@
     
     [self createsubviews];
     _myapp=[UIApplication sharedApplication].delegate;
-
+    [_changeTimer fire];
     [self getallboxes];
     [self checkUpdate];
+    
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -132,6 +134,7 @@
 {
     [super viewDidDisappear:animated];
     [_timer invalidate];
+   
     _timer=nil;
 }
 
@@ -189,6 +192,7 @@
     [titlebar addSubview:smartcontrolBtn];
     
     //空气质量显示
+    _changeTimer = [NSTimer timerWithTimeInterval:3.0 target:self selector:@selector(changeFormaldehydeValue) userInfo:nil repeats:YES];
     _airvalueview=[[UINib nibWithNibName:@"HomeAirvalueView" bundle:nil] instantiateWithOwner:nil options:nil].firstObject;
     _airvalueview.frame=CGRectMake(0,STATUSBAR_HEIGHT+TOOLBAR_HEIGHT,screenwidth, customheight*0.3);
     [self.view addSubview:_airvalueview];
@@ -406,7 +410,6 @@
     }];
 }
 #pragma mark - XML解析代理方法
-
 -(void)parserDidStartDocument:(NSXMLParser *)parser
 {
     
@@ -561,6 +564,12 @@
     [alertView removeFromSuperview];
     alertView=nil;
 }
+/**
+ * 变更甲醛
+ */
+-(void)changeFormaldehydeValue{
+    int value = arc4random()%8 + 1;
+    _airvalueview.formaldehydeValueLabel.text = [NSString stringWithFormat:@"%d",value];
 
-
+}
 @end

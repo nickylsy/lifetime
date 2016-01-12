@@ -10,7 +10,15 @@
 
 @interface HomeAirvalueView : UIView
 
+@property (weak, nonatomic) IBOutlet UILabel *pmValueLabel;
+@property (weak, nonatomic) IBOutlet UILabel *formaldehydeValueLabel;
+@property (weak, nonatomic) IBOutlet UILabel *tempertureValueLabel;
+@property (weak, nonatomic) IBOutlet UILabel *humidityValueLabel;
 
+@property (weak, nonatomic) IBOutlet UILabel *pmNameLabel;
+@property (weak, nonatomic) IBOutlet UILabel *formaldehyNameLabel;
+@property (weak, nonatomic) IBOutlet UILabel *temperatureNameLabel;
+@property (weak, nonatomic) IBOutlet UILabel *humidityNameLabel;
 
 
 @end
