@@ -15,14 +15,14 @@
 {
     if (self=[super initWithFrame:frame]) {
         
-        self.backgroundColor=UIColorFromRGB(MAIN_COLOR_VALUE);
+        self.backgroundColor=UIColorFromRGB(0xd7d7d7);
         
         CGFloat fengewidth=1.0;
         
         CGFloat itemwidth=(frame.size.width-fengewidth*2)/3;
         CGFloat itemheight=(frame.size.height-fengewidth)/2;
         
-        _introduce=[HomeFuncItem itemWithFrame:CGRectMake(0, 0, itemwidth, itemheight) image:[UIImage imageNamed:@"home_introduce.png"] Highlightedimage:[UIImage imageNamed:@"home_introduce_selected.png"] text:@"品牌介绍"];
+        _introduce=[HomeFuncItem itemWithFrame:CGRectMake(0, 0, itemwidth, itemheight) image:[UIImage imageNamed:@"home_btn_introduce"] Highlightedimage:[UIImage imageNamed:@"home_btn_introduce_s"] text:@"品牌介绍"];
         [_introduce.btn addTarget:self action:@selector(introducemethod) forControlEvents:UIControlEventTouchUpInside];
         _introduce.tag=1;
         [self addSubview:_introduce];
@@ -31,7 +31,7 @@
         _introduce.userInteractionEnabled=YES;
         [_introduce addGestureRecognizer:introduceTap];
         
-        _quanjing=[HomeFuncItem itemWithFrame:CGRectMake(itemwidth+fengewidth, 0, itemwidth, itemheight) image:[UIImage imageNamed:@"home_quanjing.png"] Highlightedimage:[UIImage imageNamed:@"home_quanjing_selected.png"] text:@"全景景观"];
+        _quanjing=[HomeFuncItem itemWithFrame:CGRectMake(itemwidth+fengewidth, 0, itemwidth, itemheight) image:[UIImage imageNamed:@"home_btn_jingguan"] Highlightedimage:[UIImage imageNamed:@"home_btn_jingguan_s"] text:@"全景景观"];
         [_quanjing.btn addTarget:self action:@selector(quanjingmethod) forControlEvents:UIControlEventTouchUpInside];
         _quanjing.tag=4;
         [self addSubview:_quanjing];
@@ -40,7 +40,7 @@
         _quanjing.userInteractionEnabled=YES;
         [_quanjing addGestureRecognizer:quanjingTap];
         
-        _jingpin=[HomeFuncItem itemWithFrame:CGRectMake((itemwidth+fengewidth)*2, 0, itemwidth, itemheight) image:[UIImage imageNamed:@"home_jingpin.png"] Highlightedimage:[UIImage imageNamed:@"home_jingpin_selected.png"] text:@"精品户型"];
+        _jingpin=[HomeFuncItem itemWithFrame:CGRectMake((itemwidth+fengewidth)*2, 0, itemwidth, itemheight) image:[UIImage imageNamed:@"home_btn_jinpin"] Highlightedimage:[UIImage imageNamed:@"home_btn_jinpin_s"] text:@"精品户型"];
         [_jingpin.btn addTarget:self action:@selector(jingpinmethod) forControlEvents:UIControlEventTouchUpInside];
         _jingpin.tag=5;
         [self addSubview:_jingpin];
@@ -77,14 +77,14 @@
 //        _messagecenter.userInteractionEnabled=YES;
 //        [_messagecenter addGestureRecognizer:messagecenterTap];
         
-        _kanfang=[HomeFuncItem itemWithFrame:CGRectMake((itemwidth+fengewidth)*2, itemheight+fengewidth, itemwidth, itemheight) image:[UIImage imageNamed:@"func_building.png"] Highlightedimage:[UIImage imageNamed:@"func_building.png"] text:@"功能建设中"];
+        _kanfang=[HomeFuncItem itemWithFrame:CGRectMake((itemwidth+fengewidth)*2, itemheight+fengewidth, itemwidth, itemheight) image:[UIImage imageNamed:@"home_btn_coming"] Highlightedimage:[UIImage imageNamed:@"home_btn_coming_s"] text:@"功能建设中"];
 //        [_kanfang.btn addTarget:self action:@selector(kanfangmethod) forControlEvents:UIControlEventTouchUpInside];
         _kanfang.tag=2;
         _kanfang.btn.imageEdgeInsets=UIEdgeInsetsMake(4, 4, 4, 4);
         [self addSubview:_kanfang];
         
         
-        _map=[HomeFuncItem itemWithFrame:CGRectMake(0, itemheight+fengewidth, itemwidth, itemheight) image:[UIImage imageNamed:@"home_map.png"] Highlightedimage:[UIImage imageNamed:@"home_map_selected.png"] text:@"楼盘地图"];
+        _map=[HomeFuncItem itemWithFrame:CGRectMake(0, itemheight+fengewidth, itemwidth, itemheight) image:[UIImage imageNamed:@"home_btn_map"] Highlightedimage:[UIImage imageNamed:@"home_btn_map_s"] text:@"楼盘地图"];
         [_map.btn addTarget:self action:@selector(mapmethod) forControlEvents:UIControlEventTouchUpInside];
         _map.tag=3;
         [self addSubview:_map];
@@ -93,7 +93,7 @@
         _map.userInteractionEnabled=YES;
         [_map addGestureRecognizer:mapTap];
         
-        _messagecenter=[HomeFuncItem itemWithFrame:CGRectMake(itemwidth+fengewidth, itemheight+fengewidth, itemwidth, itemheight) image:[UIImage imageNamed:@"home_messagecenter.png"] Highlightedimage:[UIImage imageNamed:@"home_messagecenter_selected.png"] text:@"消息中心"];
+        _messagecenter=[HomeFuncItem itemWithFrame:CGRectMake(itemwidth+fengewidth, itemheight+fengewidth, itemwidth, itemheight) image:[UIImage imageNamed:@"home_btn_message"] Highlightedimage:[UIImage imageNamed:@"home_btn_message_s"] text:@"消息中心"];
         [_messagecenter.btn addTarget:self action:@selector(messagecentermethod) forControlEvents:UIControlEventTouchUpInside];
         _messagecenter.tag=6;
         [self addSubview:_messagecenter];

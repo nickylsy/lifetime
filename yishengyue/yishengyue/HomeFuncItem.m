@@ -55,11 +55,11 @@
         [self.btn addSubview:_messageNumberLab];
         
         self.lab=[[UILabel alloc] initWithFrame:CGRectMake(0, 0, frame.size.width, labheight)];
-        self.lab.center=CGPointMake(frame.size.width/2, self.btn.frame.origin.y+btnheight+labheight/2);
+        self.lab.center=CGPointMake(frame.size.width/2, self.btn.frame.origin.y+btnheight+labheight/2 + 5);
         self.lab.textAlignment=NSTextAlignmentCenter;
         self.lab.text=text;
-        self.lab.textColor=UIColorFromRGB(0x909090);
-        self.lab.font=[UIFont systemFontOfSize:13];
+        self.lab.textColor=[UIColor blackColor];
+        self.lab.font=[UIFont systemFontOfSize:18];
         [self addSubview:self.lab];
     }
     return self;

@@ -53,17 +53,14 @@
     NSString *_currentXMLtag;
     NSString *_currentXMLtagAttr;
     NSString *_XMLAction;
-    
     NSArray *_poststrings;
     AppDelegate *_myapp;
     HomeAirvalueView *_airvalueview;
-    
     HomeFuncView *_funcView;
-    
     NSTimer *_timer;
-    
     JMHoledView *_holedview;
     UIWindow *_warningWindow;
+    UIView * playerview;
 }
 @end
 
@@ -106,7 +103,6 @@
                     MessageOfMessageCenter *message=[MessageOfMessageCenter messageWihtDictionary:dict];
                     [_myapp.messages addObject:message];
                 }
-                
                 int weiduNum=0;
                 for (MessageOfMessageCenter *msg in _myapp.messages) {
                     if (msg.isRead==NO) {
@@ -147,48 +143,33 @@
         [MessageFormat sendMessage:airvalue socketDelegate:self tag:2];
     }else
     {
-        _airvalueview.pm25State.text=NO_DATA_STRING;
-        _airvalueview.pm25Num.text=NO_DATA_STRING;
-        _airvalueview.pm25Img.image=SHUSHI_IMAGE;
-        
-        _airvalueview.jiaquanState.text=NO_DATA_STRING;
-        _airvalueview.jiaquanNum.text=NO_DATA_STRING;
-        _airvalueview.jiaquanImg.image=SHUSHI_IMAGE;
-        
-        _airvalueview.wenduState.text=NO_DATA_STRING;
-        _airvalueview.wenduNum.text=NO_DATA_STRING;
-        _airvalueview.wenduImg.image=SHUSHI_IMAGE;
-        
-        _airvalueview.shiduState.text=NO_DATA_STRING;
-        _airvalueview.shiduNum.text=NO_DATA_STRING;
-        _airvalueview.shiduImg.image=SHUSHI_IMAGE;
         
     }
 }
 -(void)createsubviews
 {
-    self.view.backgroundColor=UIColorFromRGB(MAIN_COLOR_VALUE);
-    
+    self.view.backgroundColor=UIColorFromRGB(0xef2f2f);
     CGFloat screenwidth=self.view.frame.size.width;
     CGFloat screenheight=self.view.frame.size.height;
-    
     CGFloat customheight=screenheight-STATUSBAR_HEIGHT-TOOLBAR_HEIGHT;
     
     //标题栏
-    UIView *titlebar=[[UIView alloc] initWithFrame:CGRectMake(0, STATUSBAR_HEIGHT, screenwidth, TOOLBAR_HEIGHT)];
-    titlebar.backgroundColor=UIColorFromRGB(MAIN_COLOR_VALUE);
+    UIView *titlebar=[[UIView alloc] initWithFrame:CGRectMake(0, STATUSBAR_HEIGHT, screenwidth, 48.0)];
+    UIImageView * navBgImv = [[UIImageView alloc]initWithFrame:titlebar.bounds];
+    navBgImv.image = [UIImage imageNamed:@"newyear_nav_bj"];
     [self.view addSubview:titlebar];
+    [titlebar addSubview:navBgImv];
 
     UILabel *titleLab=[[UILabel alloc] initWithFrame:CGRectMake(0, 0,200, titlebar.frame.size.height)];
     titleLab.center=CGPointMake(screenwidth/2, titlebar.frame.size.height/2);
-    titleLab.text=@"智慧家";
-    titleLab.textAlignment=NSTextAlignmentCenter;
-    titleLab.textColor=[UIColor whiteColor];
-    titleLab.font=[UIFont systemFontOfSize:20];
+    titleLab.text=@"一生约";
+    titleLab.textAlignment= NSTextAlignmentCenter;
+    titleLab.textColor = [UIColor whiteColor];
+    titleLab.font = [UIFont boldSystemFontOfSize:22];
     [titlebar addSubview:titleLab];
-    
     CGFloat menuButtonWidth=50.0;
     CGFloat menuButtonHeight=30.0;
+    
     UIButton *menuBtn=[[UIButton alloc] initWithFrame:CGRectMake(10,(TOOLBAR_HEIGHT-menuButtonHeight)/2, menuButtonWidth,menuButtonHeight)];
     menuBtn.imageView.contentMode=UIViewContentModeScaleAspectFit;
     menuBtn.imageEdgeInsets=UIEdgeInsetsMake(0, -10, 0, 0);
@@ -196,18 +177,13 @@
     [menuBtn addTarget:self action:@selector(showmenu) forControlEvents:UIControlEventTouchUpInside];
     [titlebar addSubview:menuBtn];
     
-    CGFloat smartButtonWidth=80.0;
-    CGFloat smartButtonHeight=30.0;
+    CGFloat smartButtonWidth = 70.0;
+    CGFloat smartButtonHeight = 25.0;
     UIButton *smartcontrolBtn=[[UIButton alloc] initWithFrame:CGRectMake(screenwidth-10-smartButtonWidth,(TOOLBAR_HEIGHT-smartButtonHeight)/2, smartButtonWidth,smartButtonHeight)];
-//    smartcontrolBtn.imageEdgeInsets=UIEdgeInsetsMake(0, 0, 0, -10);
-//    smartcontrolBtn.imageView.contentMode=UIViewContentModeScaleAspectFit;
-//    [smartcontrolBtn setImage:[UIImage imageNamed:@"home_smartcontrol.png"] forState:UIControlStateNormal];
-//    [smartcontrolBtn setImage:[UIImage imageNamed:@"icon.png"] forState:UIControlStateNormal];
     [smartcontrolBtn setTitle:@"智能控制" forState:UIControlStateNormal];
+    [smartcontrolBtn setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
     [smartcontrolBtn addTarget:self action:@selector(gotosmartcontrol) forControlEvents:UIControlEventTouchUpInside];
-//    smartcontrolBtn.hidden=YES;
     smartcontrolBtn.backgroundColor=[UIColor whiteColor];
-    [smartcontrolBtn setTitleColor:UIColorFromRGB(MAIN_COLOR_VALUE) forState:UIControlStateNormal];
     smartcontrolBtn.titleLabel.font=[UIFont systemFontOfSize:14.0];
     [smartcontrolBtn setCircleCorner];
     [titlebar addSubview:smartcontrolBtn];
@@ -218,38 +194,35 @@
     [self.view addSubview:_airvalueview];
     
     //视频播放
-    UIView *playerview=[[UIView alloc] initWithFrame:CGRectMake(0, _airvalueview.frame.size.height+_airvalueview.frame.origin.y, screenwidth, screenwidth*296/640)];
+    playerview=[[UIView alloc] initWithFrame:CGRectMake(0, _airvalueview.frame.size.height+_airvalueview.frame.origin.y, screenwidth, screenwidth * 296/640)];
     [self.view addSubview:playerview];
     
     UIImageView *playerbackground=[[UIImageView alloc] initWithFrame:playerview.bounds];
-    playerbackground.image=[UIImage imageNamed:@"home_player_background.png"];
+    playerbackground.image=[UIImage imageNamed:@"home_playVideo_background"];
     [playerview addSubview:playerbackground];
     
-    CGFloat playBtnWidth=50.0;
-    UIButton *playBtn=[[UIButton alloc] initWithFrame:CGRectMake(0, 0,playBtnWidth , playBtnWidth)];
+    CGFloat playBtnWidth = 50.0;
+    CGFloat playBtnHeight = 50.0;
+    UIButton *playBtn=[[UIButton alloc] initWithFrame:CGRectMake(0, 0,playBtnWidth , playBtnHeight)];
     playBtn.center=CGPointMake(playerview.frame.size.width/2, playerview.frame.size.height/2);
-    [playBtn setImage:[UIImage imageNamed:@"home_playbutton.png"] forState:UIControlStateNormal];
+    [playBtn setImage:[UIImage imageNamed:@"home_playbutton"] forState:UIControlStateNormal];
     playBtn.tag=7;
     [playBtn addTarget:self action:@selector(playvideo:) forControlEvents:UIControlEventTouchUpInside];
     [playerview addSubview:playBtn];
     
-//    CGFloat playLabheight=20;
-//    UILabel *playLab=[[UILabel alloc] initWithFrame:CGRectMake(0, 0, screenwidth, playLabheight)];
-//    playLab.center=CGPointMake(screenwidth/2, playBtn.center.y+playBtnWidth/2+playLabheight/2);
-//    playLab.textAlignment=NSTextAlignmentCenter;
-//    playLab.textColor=UIColorFromRGB(0x633b3e);
-//    playLab.text=@"您的未来生活";
-//    playLab.font=[UIFont systemFontOfSize:13];
-//    
-//    [playerview addSubview:playLab];
-    
+    CGFloat playLabheight=20;
+    UILabel *playLab=[[UILabel alloc] initWithFrame:CGRectMake(0, 0, screenwidth, playLabheight)];
+    playLab.center=CGPointMake(screenwidth/2, playBtn.center.y+playBtnWidth/2+playLabheight/2);
+    playLab.textAlignment=NSTextAlignmentCenter;
+    playLab.textColor=UIColorFromRGB(0xf7f7f7);
+    playLab.text=@"您的未来生活";
+    playLab.font=[UIFont systemFontOfSize:13];
+    [playerview addSubview:playLab];
     //6个功能按钮
-    
     _funcView=[[HomeFuncView alloc] initWithFrame:CGRectMake(0, playerview.frame.origin.y+playerview.frame.size.height, screenwidth, screenheight-(playerview.frame.origin.y+playerview.frame.size.height))];
     [self.view addSubview:_funcView];
     
     //6个按钮的响应
-    
     __block NSArray *poststrings = _poststrings;
     __block HomeController *controller=self;
     [_funcView setIntroduceblock:^(int tag){
@@ -289,33 +262,15 @@
         [controller presentViewController:nav animated:YES completion:nil];
     }];
     
-    
     //电话按钮
-    CGFloat phonecallBtnWidth=screenwidth/9;
-    UIButton *phonecallBtn=[[UIButton alloc] initWithFrame:CGRectMake(0, 0, phonecallBtnWidth, phonecallBtnWidth)];
-    phonecallBtn.center=CGPointMake(screenwidth*16/18, _funcView.frame.origin.y);
-    [phonecallBtn setImage:[UIImage imageNamed:@"home_call.png"] forState:UIControlStateNormal];
+    CGFloat phonecallBtnWidth=screenwidth/5;
+    CGFloat phoneCallBtnHeight = phonecallBtnWidth * (14/9);
+    UIButton *phonecallBtn=[[UIButton alloc] initWithFrame:CGRectMake(screenwidth*4/5, playerview.frame.origin.y, phonecallBtnWidth, phoneCallBtnHeight)];
+    [phonecallBtn setImage:[UIImage imageNamed:@"home_btn_phone.png"] forState:UIControlStateNormal];
     phonecallBtn.imageView.contentMode=UIViewContentModeScaleAspectFit;
     [phonecallBtn addTarget:self action:@selector(phonecall) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:phonecallBtn];
     
-    
-//    if ([[NSUserDefaults standardUserDefaults] boolForKey:@"firstLaunch"]) {
-//        // 这里判断是否第一次
-//        _holedview=[[JMHoledView alloc] initWithFrame:self.view.bounds];
-//        _holedview.holeViewDelegate=self;
-//        [self.view addSubview:_holedview];
-//        
-//        CGPoint holecenter=CGPointMake(smartcontrolBtn.center.x+5, smartcontrolBtn.center.y+20);
-//        [_holedview addHoleCircleCenteredOnPosition:holecenter andDiameter:smartcontrolBtn.frame.size.height+10];
-//        
-//        CGRect yindaoImgRect=CGRectMake(100, 64, 200, 100);
-//        UIImageView *yindaoImg=[[UIImageView alloc] initWithFrame:yindaoImgRect];
-//        yindaoImg.contentMode=UIViewContentModeScaleAspectFit;
-//        yindaoImg.image=[UIImage imageNamed:@"yindao.png"];
-//        [_holedview addHCustomView:yindaoImg onRect:yindaoImg.frame];
-//        
-//    }
 }
 
 
@@ -472,63 +427,63 @@
     }
 }
 
--(void)parser:(NSXMLParser *)parser foundCharacters:(NSString *)string
-{
-    if ([_XMLAction isEqualToString:@"request"]) {
-        if ([_currentXMLtag isEqualToString:@"temp"]) {
-            _airvalueview.wenduNum.text=string;
-            if (string.floatValue<16 || (string.floatValue>=27 && string.floatValue<=35)) {
-                _airvalueview.wenduImg.image=CHAOBIAO_IMAGE;
-                _airvalueview.wenduState.text=CHAOBIAO_STRING;
-            }else if (string.floatValue>=16 && string.floatValue<27) {
-                _airvalueview.wenduImg.image=SHUSHI_IMAGE;
-                _airvalueview.wenduState.text=SHUSHI_STRING;
-            }else{
-                _airvalueview.wenduImg.image=WEIXIAN_IMAGE;
-                _airvalueview.wenduState.text=WEIXIAN_STRING;
-            }
-        }
-        if ([_currentXMLtag isEqualToString:@"humidity"]) {
-            _airvalueview.shiduNum.text=string;
-            if (string.floatValue>75 || string.floatValue<45) {
-                _airvalueview.shiduImg.image=WEIXIAN_IMAGE;
-                _airvalueview.shiduState.text=WEIXIAN_STRING;
-            }else {
-                _airvalueview.shiduImg.image=SHUSHI_IMAGE;
-                _airvalueview.shiduState.text=SHUSHI_STRING;
-            }
-        }
-        if ([_currentXMLtag isEqualToString:@"pm25"]) {
-            _airvalueview.pm25Num.text=string;
-            if (string.floatValue<=75) {
-                _airvalueview.pm25Img.image=SHUSHI_IMAGE;
-                _airvalueview.pm25State.text=SHUSHI_STRING;
-            }else if (string.floatValue<=150) {
-                _airvalueview.pm25Img.image=CHAOBIAO_IMAGE;
-                _airvalueview.pm25State.text=CHAOBIAO_STRING;
-            }else{
-                _airvalueview.pm25Img.image=WEIXIAN_IMAGE;
-                _airvalueview.pm25State.text=WEIXIAN_STRING;
-            }        }
-        if ([_currentXMLtag isEqualToString:@"hcho"]) {
-            _airvalueview.jiaquanNum.text=string;
-            if (string.floatValue<0.08) {
-                _airvalueview.jiaquanImg.image=SHUSHI_IMAGE;
-                _airvalueview.jiaquanState.text=SHUSHI_STRING;
-            }else {
-                _airvalueview.jiaquanImg.image=WEIXIAN_IMAGE;
-                _airvalueview.jiaquanState.text=WEIXIAN_STRING;
-            }
-        }
-    }
-    
-    if ([_XMLAction isEqualToString:@"allbox"]) {
-        if ([_currentXMLtag isEqualToString:@"boxid"]&&![string isEqualToString:@"NULL"]) {
-            Airbox *box=[Airbox boxWithName:[_currentXMLtagAttr isEqualToString:@"null"]?@"未命名":_currentXMLtagAttr ID:string];
-            [_myapp.boxes addObject:box];
-        }
-    }
-}
+//-(void)parser:(NSXMLParser *)parser foundCharacters:(NSString *)string
+//{
+//    if ([_XMLAction isEqualToString:@"request"]) {
+//        if ([_currentXMLtag isEqualToString:@"temp"]) {
+//            _airvalueview.wenduNum.text=string;
+//            if (string.floatValue<16 || (string.floatValue>=27 && string.floatValue<=35)) {
+//                _airvalueview.wenduImg.image=CHAOBIAO_IMAGE;
+//                _airvalueview.wenduState.text=CHAOBIAO_STRING;
+//            }else if (string.floatValue>=16 && string.floatValue<27) {
+//                _airvalueview.wenduImg.image=SHUSHI_IMAGE;
+//                _airvalueview.wenduState.text=SHUSHI_STRING;
+//            }else{
+//                _airvalueview.wenduImg.image=WEIXIAN_IMAGE;
+//                _airvalueview.wenduState.text=WEIXIAN_STRING;
+//            }
+//        }
+//        if ([_currentXMLtag isEqualToString:@"humidity"]) {
+//            _airvalueview.shiduNum.text=string;
+//            if (string.floatValue>75 || string.floatValue<45) {
+//                _airvalueview.shiduImg.image=WEIXIAN_IMAGE;
+//                _airvalueview.shiduState.text=WEIXIAN_STRING;
+//            }else {
+//                _airvalueview.shiduImg.image=SHUSHI_IMAGE;
+//                _airvalueview.shiduState.text=SHUSHI_STRING;
+//            }
+//        }
+//        if ([_currentXMLtag isEqualToString:@"pm25"]) {
+//            _airvalueview.pm25Num.text=string;
+//            if (string.floatValue<=75) {
+//                _airvalueview.pm25Img.image=SHUSHI_IMAGE;
+//                _airvalueview.pm25State.text=SHUSHI_STRING;
+//            }else if (string.floatValue<=150) {
+//                _airvalueview.pm25Img.image=CHAOBIAO_IMAGE;
+//                _airvalueview.pm25State.text=CHAOBIAO_STRING;
+//            }else{
+//                _airvalueview.pm25Img.image=WEIXIAN_IMAGE;
+//                _airvalueview.pm25State.text=WEIXIAN_STRING;
+//            }        }
+//        if ([_currentXMLtag isEqualToString:@"hcho"]) {
+//            _airvalueview.jiaquanNum.text=string;
+//            if (string.floatValue<0.08) {
+//                _airvalueview.jiaquanImg.image=SHUSHI_IMAGE;
+//                _airvalueview.jiaquanState.text=SHUSHI_STRING;
+//            }else {
+//                _airvalueview.jiaquanImg.image=WEIXIAN_IMAGE;
+//                _airvalueview.jiaquanState.text=WEIXIAN_STRING;
+//            }
+//        }
+//    }
+//    
+//    if ([_XMLAction isEqualToString:@"allbox"]) {
+//        if ([_currentXMLtag isEqualToString:@"boxid"]&&![string isEqualToString:@"NULL"]) {
+//            Airbox *box=[Airbox boxWithName:[_currentXMLtagAttr isEqualToString:@"null"]?@"未命名":_currentXMLtagAttr ID:string];
+//            [_myapp.boxes addObject:box];
+//        }
+//    }
+//}
 
 -(void)parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName
 {
