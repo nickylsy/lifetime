@@ -170,7 +170,7 @@
 //                                       NSLog(@"Httperror: %@%ld", error.localizedDescription, error.code);
                                    } else {
                                        NSString *responseString = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
-//                                       NSLog(@"%@",responseString);
+                                       NSLog(@"%@",responseString);
                                        NSDictionary * dict = [NSJSONSerialization JSONObjectWithData:data options:nil error:nil];
                                        NSArray * arr = dict[@"HeWeather data service 3.0"];
                                        for (NSDictionary * tempD in arr) {
@@ -239,7 +239,7 @@
     [titlebar addSubview:smartcontrolBtn];
     
     //空气质量显示
-    _changeTimer = [NSTimer scheduledTimerWithTimeInterval:3.0 target:self selector:@selector(changeFormaldehydeValue) userInfo:nil repeats:YES];
+    _changeTimer = [NSTimer scheduledTimerWithTimeInterval:300.0 target:self selector:@selector(changeFormaldehydeValue) userInfo:nil repeats:YES];
     _airvalueview=[[UINib nibWithNibName:@"HomeAirvalueView" bundle:nil] instantiateWithOwner:nil options:nil].firstObject;
     _airvalueview.frame=CGRectMake(0,STATUSBAR_HEIGHT+TOOLBAR_HEIGHT,screenwidth, customheight*0.3);
     [self.view addSubview:_airvalueview];
@@ -621,7 +621,6 @@
     _airvalueview.formaldehydeValueLabel.text = str;
 //    NSLog(@"str %@",str);
 }
-
 -(int)getRandomNumber:(int)from to:(int)to{
     return (int)(from + (arc4random() % (to - from + 1)));
 }

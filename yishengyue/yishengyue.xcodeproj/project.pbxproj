@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0063CCE01C45E07200CDA08F /* HomeValueModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0063CCDF1C45E07200CDA08F /* HomeValueModel.m */; };
+		0063CD531C4638BD00CDA08F /* newyaer_start.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0063CD521C4638BD00CDA08F /* newyaer_start.jpg */; };
 		008164A91C448C8400D97A1E /* home_btn_coming_s.png in Resources */ = {isa = PBXBuildFile; fileRef = 0081649B1C448C8400D97A1E /* home_btn_coming_s.png */; };
 		008164AA1C448C8400D97A1E /* home_btn_coming.png in Resources */ = {isa = PBXBuildFile; fileRef = 0081649C1C448C8400D97A1E /* home_btn_coming.png */; };
 		008164AB1C448C8400D97A1E /* home_btn_introduce_s.png in Resources */ = {isa = PBXBuildFile; fileRef = 0081649D1C448C8400D97A1E /* home_btn_introduce_s.png */; };
@@ -586,6 +587,7 @@
 /* Begin PBXFileReference section */
 		0063CCDE1C45E07200CDA08F /* HomeValueModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeValueModel.h; sourceTree = "<group>"; };
 		0063CCDF1C45E07200CDA08F /* HomeValueModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeValueModel.m; sourceTree = "<group>"; };
+		0063CD521C4638BD00CDA08F /* newyaer_start.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = newyaer_start.jpg; sourceTree = "<group>"; };
 		0081649B1C448C8400D97A1E /* home_btn_coming_s.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = home_btn_coming_s.png; sourceTree = "<group>"; };
 		0081649C1C448C8400D97A1E /* home_btn_coming.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = home_btn_coming.png; sourceTree = "<group>"; };
 		0081649D1C448C8400D97A1E /* home_btn_introduce_s.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = home_btn_introduce_s.png; sourceTree = "<group>"; };
@@ -2321,6 +2323,7 @@
 		E08C7E5D1B2EA97C009DF409 /* icon */ = {
 			isa = PBXGroup;
 			children = (
+				0063CD521C4638BD00CDA08F /* newyaer_start.jpg */,
 				008164C71C44A51700D97A1E /* home_newyear_value.png */,
 				008164C31C44997A00D97A1E /* home_playVideo_background@3x.png */,
 				008164C41C44997A00D97A1E /* home_playVideo_background@2x.png */,
@@ -3338,6 +3341,7 @@
 				E08C7F1C1B2EA97C009DF409 /* left.png in Resources */,
 				E08C7EFD1B2EA97C009DF409 /* delete.png in Resources */,
 				E08C7F701B2EA97C009DF409 /* WENDU_R.png in Resources */,
+				0063CD531C4638BD00CDA08F /* newyaer_start.jpg in Resources */,
 				E07656D91B427206009AD84E /* deleteBtn.png in Resources */,
 				E08C7F271B2EA97C009DF409 /* mine_normal@2x.png in Resources */,
 				E07656D71B424B88009AD84E /* choice_ok.png in Resources */,
@@ -3827,7 +3831,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = launchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				ENABLE_BITCODE = NO;
@@ -3872,7 +3876,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = launchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				ENABLE_BITCODE = NO;
