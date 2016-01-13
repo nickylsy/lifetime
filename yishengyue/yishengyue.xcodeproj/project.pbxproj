@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0063CCE01C45E07200CDA08F /* HomeValueModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0063CCDF1C45E07200CDA08F /* HomeValueModel.m */; };
 		008164A91C448C8400D97A1E /* home_btn_coming_s.png in Resources */ = {isa = PBXBuildFile; fileRef = 0081649B1C448C8400D97A1E /* home_btn_coming_s.png */; };
 		008164AA1C448C8400D97A1E /* home_btn_coming.png in Resources */ = {isa = PBXBuildFile; fileRef = 0081649C1C448C8400D97A1E /* home_btn_coming.png */; };
 		008164AB1C448C8400D97A1E /* home_btn_introduce_s.png in Resources */ = {isa = PBXBuildFile; fileRef = 0081649D1C448C8400D97A1E /* home_btn_introduce_s.png */; };
@@ -583,6 +584,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0063CCDE1C45E07200CDA08F /* HomeValueModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeValueModel.h; sourceTree = "<group>"; };
+		0063CCDF1C45E07200CDA08F /* HomeValueModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeValueModel.m; sourceTree = "<group>"; };
 		0081649B1C448C8400D97A1E /* home_btn_coming_s.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = home_btn_coming_s.png; sourceTree = "<group>"; };
 		0081649C1C448C8400D97A1E /* home_btn_coming.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = home_btn_coming.png; sourceTree = "<group>"; };
 		0081649D1C448C8400D97A1E /* home_btn_introduce_s.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = home_btn_introduce_s.png; sourceTree = "<group>"; };
@@ -2017,6 +2020,8 @@
 				E070F8451B58AB4400163CFE /* Order.m */,
 				E0A85AD71B62246900A77523 /* AlipayAccount.h */,
 				E0A85AD81B62246900A77523 /* AlipayAccount.m */,
+				0063CCDE1C45E07200CDA08F /* HomeValueModel.h */,
+				0063CCDF1C45E07200CDA08F /* HomeValueModel.m */,
 			);
 			name = "Model类";
 			sourceTree = "<group>";
@@ -3545,6 +3550,7 @@
 				E07099BB1B4796CF00CC69BB /* CartShop.m in Sources */,
 				E0C7D8BB1B85D89E00A30A72 /* TuihuoCell.m in Sources */,
 				E09716951B5F3727006BDB4D /* JingjirenFangchanController.m in Sources */,
+				0063CCE01C45E07200CDA08F /* HomeValueModel.m in Sources */,
 				E08C7E2F1B2EA58D009DF409 /* MyAirvalueTabbar.m in Sources */,
 				E0A85AD61B61E7F600A77523 /* ChooseAcountController.m in Sources */,
 				E07099BE1B47AC5500CC69BB /* AddressInfo.m in Sources */,

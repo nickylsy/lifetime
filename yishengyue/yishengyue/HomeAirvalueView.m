@@ -18,6 +18,14 @@
     [self.humidityNameLabel setcornerRadius:self.humidityNameLabel.frame.size.height/2 borderWidth:1 borderColor:[UIColor whiteColor]];
 }
 
+-(void)updateFormaldehyValue{
+    
+    double value = arc4random()%8 + 1;
+    
+    self.formaldehydeValueLabel.text = [NSString stringWithFormat:@"%f",value];
+    
+}
+
 
 
 @end

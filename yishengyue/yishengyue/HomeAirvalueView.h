@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "HomeValueModel.h"
 @interface HomeAirvalueView : UIView
 
 @property (weak, nonatomic) IBOutlet UILabel *pmValueLabel;
@@ -20,5 +20,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *temperatureNameLabel;
 @property (weak, nonatomic) IBOutlet UILabel *humidityNameLabel;
 
+@property (nonatomic,strong)NSTimer * timer;
+-(void)configDataValueWithModel:(HomeValueModel *)model;
 
 @end

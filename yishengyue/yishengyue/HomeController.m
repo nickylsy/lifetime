@@ -35,7 +35,7 @@
 #import "UIView+RoundRectView.h"
 
 #import <ShareSDK/ShareSDK.h>
-
+#define ARC4RANDOM_MAX  0x100000000
 #define SHUSHI_IMAGE [UIImage imageNamed:@"home_shushi.png"]
 #define CHAOBIAO_IMAGE [UIImage imageNamed:@"home_chaobiao.png"]
 #define WEIXIAN_IMAGE [UIImage imageNamed:@"home_weixian.png"]
@@ -82,10 +82,9 @@
     
     [self createsubviews];
     _myapp=[UIApplication sharedApplication].delegate;
-    [_changeTimer fire];
     [self getallboxes];
     [self checkUpdate];
-    
+    [self getHomeValue];
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -96,7 +95,10 @@
     [super viewWillAppear:animated];
     
 //    if (_myapp.user) {
-    [[AFAppDotNetAPIClient sharedClient] POST:MessageCenter.URLEncodedString parameters:_myapp.user==nil?nil:@{@"UserId":_myapp.user.ID} success:^(NSURLSessionDataTask *task, id responseObject) {
+    [[AFAppDotNetAPIClient sharedClient]
+     POST:MessageCenter.URLEncodedString
+     parameters:_myapp.user == nil?nil:@{@"UserId":_myapp.user.ID}
+     success:^(NSURLSessionDataTask *task, id responseObject) {
             NSNumber *statuscode=responseObject[@"code"];
             if (statuscode.intValue==0) {
                 NSArray *array=responseObject[@"data"];
@@ -134,7 +136,8 @@
 {
     [super viewDidDisappear:animated];
     [_timer invalidate];
-   
+    [_changeTimer invalidate];
+    _changeTimer = nil;
     _timer=nil;
 }
 
@@ -149,6 +152,50 @@
         
     }
 }
+/**
+ *  请求气象数据
+ */
+-(void)getHomeValue{
+    NSString *httpUrl = @"http://apis.baidu.com/heweather/weather/free";
+    NSString *httpArg = @"city=chengdu";
+    NSString *urlStr = [[NSString alloc]initWithFormat: @"%@?%@", httpUrl, httpArg];
+    NSURL *url = [NSURL URLWithString: urlStr];
+    NSMutableURLRequest *request = [[NSMutableURLRequest alloc]initWithURL: url cachePolicy: NSURLRequestUseProtocolCachePolicy timeoutInterval: 10];
+        [request setHTTPMethod: @"GET"];
+        [request addValue: @"18b27bebfa12d8e2da7cee5cde1772ae" forHTTPHeaderField: @"apikey"];
+        [NSURLConnection sendAsynchronousRequest: request
+                                           queue: [NSOperationQueue mainQueue]
+                               completionHandler: ^(NSURLResponse *response, NSData *data, NSError *error){
+                                   if (error) {
+//                                       NSLog(@"Httperror: %@%ld", error.localizedDescription, error.code);
+                                   } else {
+                                       NSString *responseString = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+//                                       NSLog(@"%@",responseString);
+                                       NSDictionary * dict = [NSJSONSerialization JSONObjectWithData:data options:nil error:nil];
+                                       NSArray * arr = dict[@"HeWeather data service 3.0"];
+                                       for (NSDictionary * tempD in arr) {
+                                           NSDictionary * tempDict = tempD[@"aqi"];
+                                           NSDictionary * pmD = tempDict[@"city"];
+                                           NSString * pmStr = pmD[@"pm25"];
+                                           NSLog(@"%@",pmStr);
+                                           _airvalueview.pmValueLabel.text = pmStr;
+                                           
+                                           NSArray * tempArr = tempD[@"hourly_forecast"];
+                                           NSLog(@"%@",tempArr);
+                                           for (NSDictionary * dic in tempArr) {
+                                               NSString * humStr = dic[@"hum"];
+                                               NSLog(@"hum=%@",humStr);
+                                               _airvalueview.humidityValueLabel.text = humStr;
+                                               NSString * temStr = dic[@"tmp"];
+                                               NSLog(@"tem=%@",temStr);
+                                               _airvalueview.tempertureValueLabel.text = temStr;
+                                           }
+                                           
+                                       }
+                                   }
+                               }];
+}
+
 -(void)createsubviews
 {
     self.view.backgroundColor=UIColorFromRGB(0xef2f2f);
@@ -192,7 +239,7 @@
     [titlebar addSubview:smartcontrolBtn];
     
     //空气质量显示
-    _changeTimer = [NSTimer timerWithTimeInterval:3.0 target:self selector:@selector(changeFormaldehydeValue) userInfo:nil repeats:YES];
+    _changeTimer = [NSTimer scheduledTimerWithTimeInterval:3.0 target:self selector:@selector(changeFormaldehydeValue) userInfo:nil repeats:YES];
     _airvalueview=[[UINib nibWithNibName:@"HomeAirvalueView" bundle:nil] instantiateWithOwner:nil options:nil].firstObject;
     _airvalueview.frame=CGRectMake(0,STATUSBAR_HEIGHT+TOOLBAR_HEIGHT,screenwidth, customheight*0.3);
     [self.view addSubview:_airvalueview];
@@ -567,9 +614,15 @@
 /**
  * 变更甲醛
  */
--(void)changeFormaldehydeValue{
-    int value = arc4random()%8 + 1;
-    _airvalueview.formaldehydeValueLabel.text = [NSString stringWithFormat:@"%d",value];
+- (void)changeFormaldehydeValue{
+    double random = [self getRandomNumber:1 to:12] * 100 / 100.0;
+//    NSLog(@"random %f",random);
+    NSString * str = [NSString stringWithFormat:@"%.2f",random / 100.0];
+    _airvalueview.formaldehydeValueLabel.text = str;
+//    NSLog(@"str %@",str);
+}
 
+-(int)getRandomNumber:(int)from to:(int)to{
+    return (int)(from + (arc4random() % (to - from + 1)));
 }
 @end
